@@ -4,6 +4,34 @@
     <title>PageSprout Documentation</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/master.css" />
+    <link href="stylesheets/galleria.css" rel="stylesheet" type="text/css" media="screen"> 
+    <script type="text/javascript" src="javascripts/jquery.js"></script> 
+    <script type="text/javascript" src="javascripts/jquery.galleria.js"></script> 
+    <script type="text/javascript"> 
+    jQuery(function($) {
+      $('ul.gallery').galleria({
+			  history   : false,
+        clickNext : false,
+			  insert    : '#screenshot',
+			  onImage   : function() { $('.nav').css('display','block'); },
+  			onThumb : function(thumb) { 
+				  var _li = thumb.parents('li');
+				  var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				  thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1500);
+				  thumb.hover(
+					  function() { thumb.fadeTo('fast',1); },
+					  function() { _li.not('.active').children('img').fadeTo('fast',0.3); }
+			    )
+			  }
+      });
+		  $('.nav').css('display','none'); // hides the nav initially
+    }); 
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+              $("ul.gallery li:first").addClass('active');
+        });
+    </script>
   </head>
   <body>
     
@@ -24,8 +52,26 @@
     <div id="article">
     
       <h2>Screenshots</h2>
+        <p class="nav">
+          <a href="#" onclick="$.galleria.prev(); return false;">previous</a> | <a href="#" onclick="$.galleria.next(); return false;">next</a>
+        </p>
         <p>
-          &lt;&lt; insert assorted screenshots here &gt;&gt;
+          <ul class="gallery"> 
+            <li>
+              <a href="images/screenshots/1.jpg" title="The first screen when installing">
+                <img src="images/screenshots/1_thumb.jpg" alt="Image01">
+              </a>
+            </li> 
+            <li>
+              <a href="images/screenshots/2.jpg" title="The login screen">
+                <img src="images/screenshots/2_thumb.jpg" alt="Image01">
+              </a>
+            </li> 
+          </ul>
+        </p>
+        <p id="screenshot" />
+        <p>
+          <a href="#">Back to Top</a>
         </p>
     
       <h2 id="screencast">Howto Screencast</h2>
@@ -36,6 +82,9 @@
             <param name="allowscriptaccess" value="always"></param>
             <embed src="http://www.youtube.com/v/p9PiqCeLEmM&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="false" allowfullscreen="false" width="425" height="344"></embed>
           </object>
+        </p>
+        <p>
+          <a href="#">Back to Top</a>
         </p>
       
       <div class="footer">
