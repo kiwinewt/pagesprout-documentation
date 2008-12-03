@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README_FOR_APP</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README_FOR_APP</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>doc/README_FOR_APP
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Dec 02 14:37:19 +1300 2008</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>PageSprout</h1>
+<p>
+2 December 2008
+</p>
+<p>
+This is the official beta of PageSprout 1.0 which is an awesome Ruby on
+Rails Content Management System. This has been created by Rocket Boys Ltd.
+</p>
+<h2>Maintainer Contact</h2>
+<p>
+Nate Walker (Nickname: kiwinewt) - Rocket Boys Ltd &lt; nate (at)
+rocketboys (dot) co (dot) nz &gt;
+</p>
+<h2>Requirements</h2>
+<p>
+This CMS requires:
+</p>
+<ul>
+<li>Ruby on Rails 2.2 (Included)
+
+</li>
+<li>The ferret gem
+
+</li>
+</ul>
+<p>
+Depending on your setup:
+</p>
+<ul>
+<li>The mysql gem
+
+</li>
+<li>The sqlite3-ruby gem
+
+</li>
+</ul>
+<p>
+To automatically install the <b>required</b> gems, run:
+</p>
+<ul>
+<li>rake gems:install
+
+</li>
+</ul>
+<h2>Documentation</h2>
+<p>
+To generate documentation, run the command:
+</p>
+<pre>
+  * rake doc:app
+</pre>
+<p>
+For more information, visit:
+</p>
+<pre>
+  * http://docs.pagesprout.com
+</pre>
+<h2>Installation Instructions</h2>
+<ol>
+<li>Extract all the folders and files to the root of your web directory. You
+should then have this directory structure:
+
+<ul>
+<li>app
+
+</li>
+<li>config
+
+</li>
+<li>db
+
+</li>
+<li>doc
+
+</li>
+<li>lib
+
+</li>
+<li>LICENCE
+
+</li>
+<li>log
+
+</li>
+<li>public
+
+</li>
+<li>Rakefile
+
+</li>
+<li>README
+
+</li>
+<li>script
+
+</li>
+<li>vendor
+
+</li>
+</ul>
+</li>
+<li>Please read the LICENCE file
+
+</li>
+<li>Configure the CMS for your preferences by copying these files to these
+locations then modifying them as required:
+
+<ul>
+<li>config/config.yml.sample config/config.yml
+
+</li>
+<li>config/database.yml.sample config/database.yml
+
+</li>
+<li>config/initializers/mail.rb.sample config/initializers/mail.rb
+
+</li>
+</ul>
+</li>
+<li>Uncomment the first line in config/environment.rb:
+
+<ul>
+<li># ENV[&#8216;RAILS_ENV&#8217;] ||= &#8216;production&#8216;
+
+</li>
+</ul>
+</li>
+<li>Create the database by running these from the command line:
+
+<ul>
+<li>rake db:create RAILS_ENV=production
+
+</li>
+<li>rake db:migrate RAILS_ENV=production
+
+</li>
+</ul>
+</li>
+<li>Run the CMS from whatever Rails server setup you use. On a development
+machine, Mongrel is a good starting server.
+
+</li>
+</ol>
+<ul>
+<li>Please raise issues, bugs, contributions by email - see <a
+href="http://www.pagesprout.com">www.pagesprout.com</a>
+
+</li>
+</ul>
+<h2>Usage Overview</h2>
+<ol>
+<li>Open a web browser and access the site from whatever location the server is
+set to run from
+
+<ul>
+<li>(e.g.: <a href="http://localhost:3000">localhost:3000</a>)
+
+</li>
+</ul>
+</li>
+<li>Create a new user. The first user will be the site admin.
+
+</li>
+<li>Create new pages and blogs via the menus.
+
+</li>
+<li>For new themes, please visit:
+
+<ul>
+<li><a href="http://www.pagesprout.com">www.pagesprout.com</a>
+
+</li>
+</ul>
+</li>
+<li>For information on how to create a custom theme, please visit:
+
+<ul>
+<li><a href="http://style.pagesprout.com">style.pagesprout.com</a>
+
+</li>
+</ul>
+</li>
+<li>To add a CAPTCHA to your contact page, please:
+
+<ul>
+<li>Sign up at <a href="http://recaptcha.net">recaptcha.net</a>
+
+</li>
+<li>Add your Public and Private API keys to the settings page/config file.
+
+</li>
+</ul>
+</li>
+</ol>
+<h2>Known issues</h2>
+<pre>
+  * Currently none
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
