@@ -1,0 +1,61 @@
+/* General */
+
+body {
+  background: #fff url('../images/panel.gif') repeat-y;
+}
+
+/* Header */
+
+#header {
+  background: #000 url('../images/header.gif') repeat-x;
+  border-bottom: 1px solid #60738d;
+  line-height: 40px;
+  height: 40px;
+  overflow: hidden;
+  padding: 10px;
+}
+
+  #header h1 {
+    color: #fff;
+    margin: 0;
+  }
+
+/* Table of Contents */
+
+#toc {
+  float: left;
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10px;
+  width: 200px;
+}
+
+  #toc li {
+    margin: 0;
+  }
+
+  #toc a { 
+    background: url('../images/arrow.gif') no-repeat 185px 50%;
+    color: #717980;
+    display: block;
+    margin-top: 0.5em;
+    padding: 5px;
+  }
+  
+    #toc a:hover {
+      background-color: #e1e6ec;
+      color: #454b50;
+      text-decoration: none;
+    }
+
+/* Article */
+
+#article { padding: 0 20px 0 240px; }
+
+  #article .footer {
+    border-top: 2px solid #eee;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 1em;
+    padding-top: 1em;
+  }

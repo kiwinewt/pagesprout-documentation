@@ -1,0 +1,5 @@
+h1. "PageSprout Documentation":http://docs.pagesprout.com
+
+The PageSprout Documentation, which can be found at:
+
+"http://docs.pagesprout.com":http://docs.pagesprout.com

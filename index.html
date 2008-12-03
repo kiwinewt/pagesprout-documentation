@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>PageSprout Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/master.css" />
+  </head>
+  <body>
+    
+    <div id="header">
+      <h1>PageSprout Documentation</h1>
+    </div>
+    
+    <ul id="toc">
+      <li><a href="index.html#">Introduction</a></li>
+      <li><a href="index.html#install">Installing</a></li>
+      <li><a href="index.html#usage">Using</a></li>
+      <li><a href="rdoc/index.html">Ruby-Generated Documentation</a></li>
+      <li><a href="screenshots.html">Screenshots</a></li>
+      <li><a href="screenshots.html#screencast">Howto Screencast</a></li>
+      <li><a href="http://style.pagesprout.com">Style Guide</a></li>
+    </ul>
+    
+    <div id="article">
+    
+      <h2>Introduction</h2>
+      
+      <p>
+        This is the documentation for <a href="http://pagesprout.com">PageSprout</a>.
+      </p>
+      
+      <p>
+        Because PageSprout was developed in a production environment, it was designed to be used by developers simply and quickly but allowing simplicity for end users.
+      </p>
+      
+      <p>
+        The goal of this document is to give you enough technical specifics to understand how to get PageSprout up and running. It is not designed to be a complete technical document, but <a href="rdoc/index.html">we have that too</a>!
+      </p>
+      <a href="#">Back to Top</a>
+      
+      <h2 id="install">Installing</h2>
+      
+      <ol>
+        <li>
+          Before installing the CMS, install:
+          <ul>
+            <li>
+              The ferret gem - gem install ferret
+            </li>
+            <li>
+              OpenSSL - Dependant on your system. E.G.: on Debian Linux: apt-get install libopenssl-ruby1.8
+            </li>
+            <li>
+              Depending on your choice of database:
+              <ul>
+                <li><a href="http://wiki.rubyonrails.org/rails/pages/mysql" target="_blank">MySQL</a> - gem install mysql</li>
+                <li><a href="http://wiki.rubyonrails.com/rails/pages/SQLite" target="_blank">SQLite</a> - gem install sqlite3-ruby</li>
+                <li><a href="http://wiki.rubyonrails.org/rails/pages/PostgreSQL" target="_blank">PostgreSQL (untested)</a> - gem install postgres</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Download Pagesprout from <a href="http://pagesprout.com">http://pagesprout.com</a>
+        </li>
+        <li>
+          Extract all the folders and files to the location you wish to host the CMS (e.g.: /var/www/mysite/).
+        </li>
+        <li>
+          Configure the CMS for your preferences by copying these files to these locations then modifying them as required:
+          <ul>
+            <li>config/config.yml.sample - config/config.yml</li>
+            <li>config/database.yml.sample - config/database.yml</li>
+            <li>config/initializers/mail.rb.sample - config/initializers/mail.rb</li>
+          </ul>
+        </li>
+        <li>
+          Uncomment the first line in config/environment.rb: # ENV['RAILS_ENV'] ||= 'production'
+        </li>
+        <li>
+          Create the database by running these from the command line:
+          <ul>
+            <li>rake db:create RAILS_ENV=production</li>
+            <li>rake db:migrate RAILS_ENV=production</li>
+          </ul>
+        </li>
+        <li>
+          Run the CMS from whatever Rails server setup you use.<br />
+          On a development machine, Mongrel is a good starting server.
+        </li>
+      </ol>
+      <a href="#">Back to Top</a>
+      
+      <h2 id="usage">Usage</h2>
+      
+      <ol>
+        <li>
+          Heh
+        </li>
+      </ol>
+      <a href="#">Back to Top</a>
+      
+      <div class="footer">
+        Last updated 2008-12-03.
+      </div>
+      
+    </div>
+    
+    
+  </body>
+</html>
