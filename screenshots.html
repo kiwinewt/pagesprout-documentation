@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <title>PageSprout Style Guide</title>
+    <title>PageSprout Documentation</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/master.css" />
   </head>
@@ -12,91 +12,26 @@
     </div>
     
     <ul id="toc">
-      <li><a href="index.html#intro">Introduction</a></li>
+      <li><a href="index.html#">Introduction</a></li>
       <li><a href="index.html#install">Installing</a></li>
-      <li><a href="index.html#useage">Using</a></li>
+      <li><a href="index.html#usage">Using</a></li>
       <li><a href="rdoc/index.html">Ruby-Generated Documentation</a></li>
-      <li><a href="screenshots.html">Screenshots</a></li>
+      <li><a href="screenshots.html#">Screenshots</a></li>
       <li><a href="screenshots.html#screencast">Howto Screencast</a></li>
       <li><a href="http://style.pagesprout.com">Style Guide</a></li>
     </ul>
     
     <div id="article">
     
-      <h2 id="intro">Introduction to Themes</h2>
-      
-      <p>
-        Themes are a way to customise the look and feel of your PageSprout site.
-      </p>
-      
-      <p>
-         A theme does not have any template files. Instead, you should use the existing markup to style your theme, a la <a href="http://www.csszengarden.com/">CSS Zen Garden</a>.
-      </p>
-      
-      <h2 id="structure">Structure of a Theme</h2>
-      
-      <p>
-        Themes live under <code>public/themes/<em>themename</em></code>.
-      </p>
-      
-      <p>
-        The two files you <strong>must</strong> include are: <code>master.css</code> and <code>screenshot.jpg</code>.
-      </p>
-      
-      <p>
-        A typical theme will look like this:
-      </p>
-      
-      <div class="directory-tree">
-        <ul>
-          <li>
-            public/
-            <ul>
-              <li>
-                themes/
-                  <ul>
-                    <li>
-                      <em>themename</em>/
-                      <ul>
-                        <li>images/</li>
-                        <li>
-                          stylesheets/
-                          <ul>
-                            <li class="stylesheet">master.css</li>
-                          </ul>
-                        </li>
-                        <li class="image">screenshot.jpg</li>
-                      </ul>
-                    </li>
-                  </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      
-      <h2 id="building">Building Your First Theme</h2>
-      
-      <ol>
-        <li>Open the <code>public/themes/</code> folder</li>
-        <li>Create a new folder called <code>mytheme</code></li>
-        <li>Create a folder called <code>stylesheets</code></li>
-        <li>Create a new text file called <code>master.css</code> and save it in the <code>stylesheets</code> folder</li>
-      </ol>
-      
-      <p>
-        You can add more stylesheets by adding the <code>@import</code> statement in your <code>master.css</code> file:
-      </p>
-      
-      <pre><code>@import 'general.css';
-@import 'composition.css';</code></pre>
-      
-      <div class="note">
-        <h3>Warning: Altering Layout</h3>
+      <h2>Screenshots</h2>
         <p>
-          While you can modify the layout in <code>app/views/layouts/master.html.erb</code>, beware that altering the HTML will likely break any other themes installed. Change at your own risk.
+          &lt;&lt; insert assorted screenshots here &gt;&gt;
         </p>
-      </div>
+    
+      <h2 id="screencast">Howto Screencast</h2>
+        <p>
+          &lt;&lt; insert youtube vid here &gt;&gt;
+        </p>
       
       <div class="footer">
         Last updated 2008-12-01.
