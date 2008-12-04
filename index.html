@@ -45,17 +45,17 @@
           Before installing the CMS, install:
           <ul>
             <li>
-              The ferret gem - gem install ferret
+              The ferret gem - <code>gem install ferret</code>
             </li>
             <li>
-              OpenSSL - Dependant on your system. E.G.: on Debian Linux: apt-get install libopenssl-ruby1.8
+              OpenSSL - Dependant on your system. E.G.: on Debian Linux: <code>apt-get install libopenssl-ruby1.8</code>
             </li>
             <li>
               Depending on your choice of database:
               <ul>
-                <li><a href="http://wiki.rubyonrails.org/rails/pages/mysql" target="_blank">MySQL</a> - gem install mysql</li>
-                <li><a href="http://wiki.rubyonrails.com/rails/pages/SQLite" target="_blank">SQLite</a> - gem install sqlite3-ruby</li>
-                <li><a href="http://wiki.rubyonrails.org/rails/pages/PostgreSQL" target="_blank">PostgreSQL (untested)</a> - gem install postgres</li>
+                <li><a href="http://wiki.rubyonrails.org/rails/pages/mysql" target="_blank">MySQL</a> - <code>gem install mysql</code></li>
+                <li><a href="http://wiki.rubyonrails.com/rails/pages/SQLite" target="_blank">SQLite</a> - <code>gem install sqlite3-ruby</code></li>
+                <li><a href="http://wiki.rubyonrails.org/rails/pages/PostgreSQL" target="_blank">PostgreSQL (untested)</a> - <code>gem install postgres</code></li>
               </ul>
             </li>
           </ul>
@@ -63,25 +63,89 @@
         <li>
           Download Pagesprout from <a href="http://pagesprout.com">http://pagesprout.com</a>
         </li>
-        <li>
-          Extract all the folders and files to the location you wish to host the CMS (e.g.: /var/www/mysite/).
+        <li class="directory-tree">
+          Extract all the folders and files to the location you wish to host the CMS (e.g.: <code>/var/www/mysite/</code>).<br />
+          A typical installation will look like this:<br />
+          (Note: Not all files are shown here, just important ones)
+        <ul>
+          <li>
+            app
+          </li>
+          <li>
+            config
+            <ul>
+              <li>
+                initializers
+                <ul>
+                  <li class="stylesheet">
+                    mail.rb.sample
+                  </li>
+                </ul>
+              </li>
+              <li class="stylesheet">
+                database.yml.sample
+              </li>
+              <li class="stylesheet">
+                config.yml.sample
+              </li>
+              <li class="stylesheet">
+                environment.rb
+              </li>
+            </ul>
+          </li>
+          <li>
+            db
+          </li>
+          <li>
+            doc
+          </li>
+          <li>
+            lib
+          </li>
+          <li>
+            log
+          </li>
+          <li>
+            public
+            <ul>
+              <li>
+                themes
+              </li>
+            </ul>
+          </li>
+          <li>
+            script
+          </li>
+          <li>
+            test
+          </li>
+          <li>
+            vendor
+          </li>
+          <li class="stylesheet">
+            LICENCE
+          </li>
+          <li class="stylesheet">
+            README
+          </li>
+        </ul>
         </li>
-        <li id="copyfiles">
+        <li>
           Configure the CMS for your preferences by copying these files to these locations then modifying them as required:
           <ul>
-            <li>config/config.yml.sample - config/config.yml</li>
-            <li>config/database.yml.sample - config/database.yml</li>
-            <li>config/initializers/mail.rb.sample - config/initializers/mail.rb</li>
+            <li><code>config/config.yml.sample</code> - <code>config/config.yml</code></li>
+            <li><code>config/database.yml.sample</code> - <code>config/database.yml</code></li>
+            <li><code>config/initializers/mail.rb.sample</code> - <code>config/initializers/mail.rb</code></li>
           </ul>
         </li>
         <li>
-          Uncomment the first line in config/environment.rb: # ENV['RAILS_ENV'] ||= 'production'
+          Uncomment the first line in config/environment.rb: <code># ENV['RAILS_ENV'] ||= 'production'</code>
         </li>
         <li>
           Create the database by running these from the command line:
           <ul>
-            <li>rake db:create RAILS_ENV=production</li>
-            <li>rake db:migrate RAILS_ENV=production</li>
+            <li><code>rake db:create RAILS_ENV=production</code></li>
+            <li><code>rake db:migrate RAILS_ENV=production</code></li>
           </ul>
         </li>
         <li>
@@ -106,10 +170,10 @@
           The first page that is created will be the home page. This cannot be changed until another page is added.
         </li>
         <li>
-          The Contact Us page and the Search box can be enabled or disabled in the <a href="#copyfiles">config/config.yml</a> file
+          The Contact Us page and the Search box can be enabled or disabled in the <code>config/config.yml</code> file
         </li>
         <li>
-          To add a CAPTCHA to the Contact Page to stop Spam emails, sign up at <a href="http://recaptcha.net">http://recaptcha.net</a> and then add your Public and Private API keys to the config/config.yml file.
+          To add a CAPTCHA to the Contact Page to stop Spam emails, sign up at <a href="http://recaptcha.net">http://recaptcha.net</a> and then add your Public and Private API keys to the <code>config/config.yml</code> file.
         </li>
       </ul>
       
@@ -124,10 +188,10 @@
           Title - The title of the page. Displays in the browser header and at the top of the page.
         </li>
         <li>
-          Body - The content of the page. Currently accepts basic HTML tags, such as &lt;p&gt;, &lt;u&gt; and &lt;b&gt;.
+          Body - The content of the page. Currently accepts basic HTML tags, such as <code>&lt;p&gt; &lt;u&gt; &lt;b&gt;</code>.
         </li>
         <li>
-          Link - Where the page is located, e.g.: http://yoursite.com/pages/<u>newpage</u>
+          Link - Where the page is located, e.g.: <code>http://yoursite.com/pages/<u>newpage</u></code>
         </li>
         <li>
           Home page - Set this if the page will be the home page.
@@ -148,7 +212,7 @@
           Description - What the blog is about.
         </li>
         <li>
-          Link - Where the blog is located, e.g.: http://yoursite.com/blogs/<u>newblog</u>
+          Link - Where the blog is located, e.g.: <code>http://yoursite.com/blogs/<u>newblog</u></code>
         </li>
         <li>
           Enabled - Unset this if the blog (and all its posts) you are working on is not to be seen by visitors to your site.<br />
@@ -172,7 +236,7 @@
         <li>
           The link for the post is automatically generated to keep it simple for the user.<br />
           The format for the link is: YYYY-MM-DD-title-with-dashes<br />
-          The page will be accessible at: http://yoursite.com/blogs/<u>newblog</u>/posts/<u>YYYY-MM-DD-title-with-dashes</u>
+          The page will be accessible at: <code>http://yoursite.com/blogs/<u>newblog</u>/posts/<u>YYYY-MM-DD-title-with-dashes</u></code>
         </li>
       </ul>
       
