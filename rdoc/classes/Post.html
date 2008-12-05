@@ -100,9 +100,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000053">permalink=</a>&nbsp;&nbsp;
-      <a href="#M000051">permalink_with_spaces</a>&nbsp;&nbsp;
-      <a href="#M000052">to_param</a>&nbsp;&nbsp;
+      <a href="#M000056">permalink_with_spaces</a>&nbsp;&nbsp;
+      <a href="#M000058">to_param</a>&nbsp;&nbsp;
+      <a href="#M000057">toggle_enabled!</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -117,19 +117,6 @@
 
 
 
-    <div id="attribute-list">
-      <h3 class="section-bar">Attributes</h3>
-
-      <div class="name-list">
-        <table>
-        <tr class="top-aligned-row context-row">
-          <td class="context-item-name">permalink</td>
-          <td class="context-item-value">&nbsp;[W]&nbsp;</td>
-          <td class="context-item-desc"></td>
-        </tr>
-        </table>
-      </div>
-    </div>
       
 
 
@@ -137,34 +124,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000053" class="method-detail">
-        <a name="M000053"></a>
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
 
         <div class="method-heading">
-          <a href="#M000053" class="method-signature">
-          <span class="method-name">permalink=</span><span class="method-args">(text)</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000053-source">
-<pre>
-    <span class="ruby-comment cmt"># File app/models/post.rb, line 28</span>
-28:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">permalink=</span>(<span class="ruby-identifier">text</span>)
-29:     <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">:permalink</span>] = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">downcase!</span>
-30:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
-      <div id="method-M000051" class="method-detail">
-        <a name="M000051"></a>
-
-        <div class="method-heading">
-          <a href="#M000051" class="method-signature">
+          <a href="#M000056" class="method-signature">
           <span class="method-name">permalink_with_spaces</span><span class="method-args">()</span>
           </a>
         </div>
@@ -175,8 +139,8 @@ Return the permalink with underscores and dashes split to spaces to allow
 better search.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000051-source">
+            onclick="toggleCode('M000056-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000056-source">
 <pre>
     <span class="ruby-comment cmt"># File app/models/post.rb, line 19</span>
 19:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">permalink_with_spaces</span>
@@ -187,11 +151,11 @@ better search.
         </div>
       </div>
 
-      <div id="method-M000052" class="method-detail">
-        <a name="M000052"></a>
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
 
         <div class="method-heading">
-          <a href="#M000052" class="method-signature">
+          <a href="#M000058" class="method-signature">
           <span class="method-name">to_param</span><span class="method-args">()</span>
           </a>
         </div>
@@ -201,12 +165,36 @@ better search.
 Return the permalink as the post ID
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000052-source">
+            onclick="toggleCode('M000058-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000058-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/post.rb, line 24</span>
-24:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_param</span>
-25:     <span class="ruby-identifier">permalink_was</span>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 29</span>
+29:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_param</span>
+30:     <span class="ruby-identifier">permalink_was</span>
+31:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
+
+        <div class="method-heading">
+          <a href="#M000057" class="method-signature">
+          <span class="method-name">toggle_enabled!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000057-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000057-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/post.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">toggle_enabled!</span>
+24:     <span class="ruby-identifier">enabled</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">enabled</span>
+25:     <span class="ruby-identifier">save</span>
 26:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

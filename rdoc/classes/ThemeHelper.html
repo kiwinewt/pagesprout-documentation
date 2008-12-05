@@ -94,7 +94,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000112">theme_stylesheet</a>&nbsp;&nbsp;
+      <a href="#M000134">count_themes</a>&nbsp;&nbsp;
+      <a href="#M000133">theme_stylesheet</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -116,11 +117,38 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000112" class="method-detail">
-        <a name="M000112"></a>
+      <div id="method-M000134" class="method-detail">
+        <a name="M000134"></a>
 
         <div class="method-heading">
-          <a href="#M000112" class="method-signature">
+          <a href="#M000134" class="method-signature">
+          <span class="method-name">count_themes</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+return the number of themes TODO should be part of a theme model
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000134-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000134-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/helpers/theme_helper.rb, line 14</span>
+14:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">count_themes</span>
+15:     <span class="ruby-identifier">warn</span> <span class="ruby-value str">'[DEPRECATION] use `Theme.all.size` instead of `count_themes`'</span>
+16:     <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">size</span>
+17:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
+
+        <div class="method-heading">
+          <a href="#M000133" class="method-signature">
           <span class="method-name">theme_stylesheet</span><span class="method-args">()</span>
           </a>
         </div>
@@ -130,13 +158,14 @@
 <a href="Theme.html">Theme</a> stylesheet location.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000112-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000112-source">
+            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000133-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/helpers/theme_helper.rb, line 7</span>
-7:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">theme_stylesheet</span>
-8:     <span class="ruby-node">&quot;/themes/#{Theme.active.name}/stylesheets/master&quot;</span>
-9:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/helpers/theme_helper.rb, line 7</span>
+ 7:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">theme_stylesheet</span>
+ 8:     <span class="ruby-identifier">warn</span> <span class="ruby-value str">'[DEPRECATED] Use `Theme.active.stylesheet` instead of `theme_stylesheet`'</span>
+ 9:     <span class="ruby-constant">Theme</span>.<span class="ruby-identifier">active</span>.<span class="ruby-identifier">stylesheet</span>
+10:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>

@@ -86,9 +86,12 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000006">active</a>&nbsp;&nbsp;
-      <a href="#M000007">all</a>&nbsp;&nbsp;
+      <a href="#M000007">active</a>&nbsp;&nbsp;
+      <a href="#M000008">admin</a>&nbsp;&nbsp;
+      <a href="#M000010">all</a>&nbsp;&nbsp;
+      <a href="#M000009">default</a>&nbsp;&nbsp;
       <a href="#M000005">new</a>&nbsp;&nbsp;
+      <a href="#M000006">stylesheet</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -123,35 +126,12 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000006" class="method-detail">
-        <a name="M000006"></a>
-
-        <div class="method-heading">
-          <a href="#M000006" class="method-signature">
-          <span class="method-name">active</span><span class="method-args">()</span>
-          </a>
-        </div>
-      
-        <div class="method-description">
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000006-source">
-<pre>
-    <span class="ruby-comment cmt"># File app/models/theme.rb, line 9</span>
- 9:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">active</span>
-10:     <span class="ruby-identifier">new</span>(<span class="ruby-constant">AppConfig</span>.<span class="ruby-identifier">theme</span> <span class="ruby-operator">||</span> <span class="ruby-value str">&quot;default&quot;</span>)
-11:   <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-        </div>
-      </div>
-
       <div id="method-M000007" class="method-detail">
         <a name="M000007"></a>
 
         <div class="method-heading">
           <a href="#M000007" class="method-signature">
-          <span class="method-name">all</span><span class="method-args">()</span>
+          <span class="method-name">active</span><span class="method-args">()</span>
           </a>
         </div>
       
@@ -160,19 +140,88 @@
             onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000007-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/theme.rb, line 13</span>
-13:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all</span>
-14:     <span class="ruby-comment cmt"># TODO simplify</span>
-15:     <span class="ruby-identifier">result</span> = {}
-16:     <span class="ruby-identifier">files</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">entries</span>(<span class="ruby-node">&quot;#{RAILS_ROOT}/public/themes/&quot;</span>)
-17:     <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
-18:       <span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_s</span>
-19:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">&quot;.&quot;</span>
-20:         <span class="ruby-identifier">result</span>[<span class="ruby-identifier">file</span>] = <span class="ruby-identifier">file</span>
-21:       <span class="ruby-keyword kw">end</span>
-22:     <span class="ruby-keyword kw">end</span>
-23:     <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sort</span>
-24:   <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># File app/models/theme.rb, line 12</span>
+12:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">active</span>
+13:     <span class="ruby-constant">AppConfig</span>.<span class="ruby-identifier">theme</span> <span class="ruby-value">? </span><span class="ruby-identifier">new</span>(<span class="ruby-constant">AppConfig</span>.<span class="ruby-identifier">theme</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">default</span>
+14:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="#M000008" class="method-signature">
+          <span class="method-name">admin</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/theme.rb, line 16</span>
+16:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">admin</span>
+17:     <span class="ruby-identifier">new</span>(<span class="ruby-value str">'admin'</span>)
+18:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="#M000010" class="method-signature">
+          <span class="method-name">all</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000010-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/theme.rb, line 24</span>
+24:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all</span>
+25:     <span class="ruby-comment cmt"># TODO simplify</span>
+26:     <span class="ruby-identifier">result</span> = {}
+27:     <span class="ruby-identifier">files</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">entries</span>(<span class="ruby-node">&quot;#{RAILS_ROOT}/public/themes/&quot;</span>)
+28:     <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+29:       <span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_s</span>
+30:       <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">file</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value str">&quot;.&quot;</span>
+31:         <span class="ruby-identifier">result</span>[<span class="ruby-identifier">file</span>] = <span class="ruby-identifier">file</span>
+32:       <span class="ruby-keyword kw">end</span>
+33:     <span class="ruby-keyword kw">end</span>
+34:     <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sort</span>
+35:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="#M000009" class="method-signature">
+          <span class="method-name">default</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/theme.rb, line 20</span>
+20:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">default</span>
+21:     <span class="ruby-identifier">new</span>(<span class="ruby-value str">'default'</span>)
+22:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
@@ -192,10 +241,35 @@
             onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000005-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/models/theme.rb, line 5</span>
-5:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">nm</span>)
-6:     <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">nm</span>
-7:   <span class="ruby-keyword kw">end</span>
+   <span class="ruby-comment cmt"># File app/models/theme.rb, line 4</span>
+4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">nm</span>)
+5:     <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">nm</span>
+6:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="#M000006" class="method-signature">
+          <span class="method-name">stylesheet</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000006-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/theme.rb, line 8</span>
+ 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stylesheet</span>
+ 9:     <span class="ruby-node">&quot;/themes/#{name}/stylesheets/master&quot;</span>
+10:   <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
         </div>
