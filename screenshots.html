@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>PageSprout Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/master.css" />
+    <link href="stylesheets/galleria.css" rel="stylesheet" type="text/css" media="screen"> 
+    <script type="text/javascript" src="javascripts/jquery.js"></script> 
+    <script type="text/javascript" src="javascripts/jquery.galleria.js"></script> 
+    <script type="text/javascript"> 
+    jQuery(function($) {
+      $('ul.gallery').galleria({
+			  history   : false,
+        clickNext : false,
+			  insert    : '#screenshot',
+			  onImage   : function() { $('.nav').css('display','block'); },
+  			onThumb : function(thumb) { 
+				  var _li = thumb.parents('li');
+				  var _fadeTo = _li.is('.active') ? '1' : '0.3';
+				  thumb.css({display:'none',opacity:_fadeTo}).fadeIn(1500);
+				  thumb.hover(
+					  function() { thumb.fadeTo('fast',1); },
+					  function() { _li.not('.active').children('img').fadeTo('fast',0.3); }
+			    )
+			  }
+      });
+		  $('.nav').css('display','none'); // hides the nav initially
+    }); 
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+              $("ul.gallery li:first").addClass('active');
+        });
+    </script>
+  </head>
+  <body>
+    
+    <div id="header">
+      <h1>PageSprout Documentation</h1>
+    </div>
+    
+    <ul id="toc">
+      <li><a href="index.html#">Introduction</a></li>
+      <li><a href="index.html#install">Installing</a></li>
+      <li><a href="index.html#usage">Using</a></li>
+      <li><a href="rdoc/index.html">Ruby-Generated Documentation</a></li>
+      <li><a href="screenshots.html#">Screenshots</a></li>
+      <li><a href="screenshots.html#screencast">Howto Screencast</a></li>
+      <li><a href="http://style.pagesprout.com">Style Guide</a></li>
+    </ul>
+    
+    <div id="article">
+    
+      <h2>Screenshots</h2>
+        <p class="nav">
+          <a href="#" onclick="$.galleria.prev(); return false;">previous</a> | <a href="#" onclick="$.galleria.next(); return false;">next</a>
+        </p>
+        <p>
+          <ul class="gallery"> 
+            <li>
+              <a href="images/screenshots/1.jpg" title="The first screen when installing">
+                <img src="images/screenshots/1_thumb.jpg" alt="Image01">
+              </a>
+            </li> 
+            <li>
+              <a href="images/screenshots/2.jpg" title="The login screen">
+                <img src="images/screenshots/2_thumb.jpg" alt="Image01">
+              </a>
+            </li> 
+            <li>
+              <a href="images/screenshots/3.jpg" title="The login screen">
+                <img src="images/screenshots/3_thumb.jpg" alt="Image01">
+              </a>
+            </li> 
+          </ul>
+        </p>
+        <p id="screenshot" />
+        <p>
+          <a href="#">Back to Top</a>
+        </p>
+    
+      <h2 id="screencast">Howto Screencast</h2>
+        <p>
+          &lt;&lt; Coming Soon &gt;&gt;
+        </p>
+        <p>
+          <a href="#">Back to Top</a>
+        </p>
+      
+      <div class="footer">
+        Last updated 2008-12-04.
+      </div>
+      
+    </div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>PageSprout Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/master.css" />
+  </head>
+  <body>
+    
+    <div id="header">
+      <h1>PageSprout Documentation</h1>
+    </div>
+    
+    <ul id="toc">
+      <li><a href="index.html#">Introduction</a></li>
+      <li><a href="index.html#install">Installing</a></li>
+      <li><a href="index.html#usage">Using</a></li>
+      <li><a href="rdoc/index.html">Ruby-Generated Documentation</a></li>
+      <li><a href="screenshots.html#">Screenshots</a></li>
+      <li><a href="screenshots.html#screencast">Howto Screencast</a></li>
+      <li><a href="http://style.pagesprout.com">Style Guide</a></li>
+    </ul>
+    
+    <div id="article">
+    
+      <h2>Introduction</h2>
+      
+      <p>
+        This is the documentation for <a href="http://pagesprout.com">PageSprout</a>.
+      </p>
+      
+      <p>
+        Because PageSprout was developed in a production environment, it was designed to be used by developers simply and quickly but allowing simplicity for end users.
+      </p>
+      
+      <p>
+        The goal of this document is to give you enough technical specifics to understand how to get PageSprout up and running. It is not designed to be a complete technical document, but <a href="rdoc/index.html">we have that too</a>!
+      </p>
+      <a href="#">Back to Top</a>
+      
+      <h2 id="install">Installing</h2>
+      
+      <ol>
+        <li>
+          Before installing the CMS, install:
+          <ul>
+            <li>
+              Ruby 1.8
+            </li>
+            <li>
+              Rails 2.2.2
+            </li>
+            <li>
+              OpenSSL - Depends on your system, e.g.: on Debian Linux: <code>apt-get install libopenssl-ruby1.8</code>
+            </li>
+            <li>
+              The ferret gem - <code>rake gems:install</code>
+            </li>
+            <li>
+              Depending on your choice of database:
+              <ul>
+                <li><a href="http://wiki.rubyonrails.org/rails/pages/mysql" target="_blank">MySQL</a> - <code>gem install mysql</code></li>
+                <li><a href="http://wiki.rubyonrails.com/rails/pages/SQLite" target="_blank">SQLite</a> - <code>gem install sqlite3-ruby</code></li>
+                <li><a href="http://wiki.rubyonrails.org/rails/pages/PostgreSQL" target="_blank">PostgreSQL (untested)</a> - <code>gem install postgres</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Download Pagesprout from <a href="http://pagesprout.com">http://pagesprout.com</a>
+        </li>
+        <li class="directory-tree">
+          Extract all the folders and files to the location you wish to host the CMS (e.g.: <code>/var/www/mysite/</code>).<br />
+          A typical installation will look like this:<br />
+          (Note: Not all files are shown here, just important ones)
+        <ul>
+          <li>
+            app
+          </li>
+          <li>
+            config
+            <ul>
+              <li>
+                initializers
+                <ul>
+                  <li class="stylesheet">
+                    mail.rb.sample
+                  </li>
+                </ul>
+              </li>
+              <li class="stylesheet">
+                database.yml.sample
+              </li>
+              <li class="stylesheet">
+                config.yml.sample
+              </li>
+              <li class="stylesheet">
+                environment.rb
+              </li>
+            </ul>
+          </li>
+          <li>
+            db
+          </li>
+          <li>
+            doc
+          </li>
+          <li>
+            lib
+          </li>
+          <li>
+            log
+          </li>
+          <li>
+            public
+            <ul>
+              <li>
+                themes
+              </li>
+            </ul>
+          </li>
+          <li>
+            script
+          </li>
+          <li>
+            test
+          </li>
+          <li>
+            vendor
+          </li>
+          <li class="stylesheet">
+            LICENCE
+          </li>
+          <li class="stylesheet">
+            README
+          </li>
+        </ul>
+        </li>
+        <li>
+          Configure the CMS for your preferences by copying these files to these locations then modifying them as required:
+          <ul>
+            <li><code>config/config.yml.sample</code> - <code>config/config.yml</code></li>
+            <li><code>config/database.yml.sample</code> - <code>config/database.yml</code></li>
+            <li><code>config/initializers/mail.rb.sample</code> - <code>config/initializers/mail.rb</code></li>
+          </ul>
+        </li>
+        <li>
+          Uncomment the first line in config/environment.rb:
+          <ul><li> <code># ENV['RAILS_ENV'] ||= 'production'</code></li></ul>
+        </li>
+        <li>
+          Create the database by running these from the command line:
+          <ul>
+            <li><code>rake db:create RAILS_ENV=production</code></li>
+            <li><code>rake db:migrate RAILS_ENV=production</code></li>
+          </ul>
+        </li>
+        <li>
+          Run the CMS from whatever Rails server setup you use.<br />
+          On a development machine, Mongrel is a good starting server.
+        </li>
+        <li>
+          For development, the database will be different to the production one. There is a plugin created that allows dumping the development database to the production one: <a href="http://github.com/kiwinewt/database_migrate/tree/master">DatabaseMigrate.</a>
+        </li>
+      </ol>
+      <a href="#">Back to Top</a>
+      
+      <h2 id="usage">Using</h2>
+      <h3>Quick Start</h3>
+      <ul>
+        <li>Create a new user. The first user will be the site admin.</li>
+        <li>Create new pages and blogs via the menus.</li>
+        <li>For new themes, please visit: "http://pagesprout.com":http://pagesprout.com</li>
+        <li>For information on how to create a custom theme, please visit: "http://style.pagesprout.com":http://style.pagesprout.com</li>
+        <li>To add a CAPTCHA to your contact page, please:</li>
+        <li>Sign up at "http://recaptcha.net":http://recaptcha.net</li>
+        <li>Add your Public and Private API keys to the config/config.yml file.</li>
+      </ul>
+      
+      <h3>First Use</h3>
+      
+      <ul>
+        <li>
+          When the CMS is installed, there will be no users created. This is a quick and easy way of stopping unsecure pagesprout installs with a default admin user and the default password.
+        </li>
+        <li>
+          The first page that is created will be the home page. This cannot be changed until another page is added.
+        </li>
+        <li>
+          The Contact Us page and the Search box can be enabled or disabled in the <code>config/config.yml</code> file
+        </li>
+        <li>
+          To add a CAPTCHA to the Contact Page to stop Spam emails, sign up at <a href="http://recaptcha.net">http://recaptcha.net</a> and then add your Public and Private API keys to the <code>config/config.yml</code> file.
+        </li>
+      </ul>
+      
+      <h3>Pages</h3>
+      
+      <ul>
+        <li>
+          If there is only one page created then it will be the home page.<br />
+          The built-in home page cannot be changed by the users, but it will not be displayed if there is another home page set.
+        </li>
+        <li>
+          Title - The title of the page. Displays in the browser header and at the top of the page.
+        </li>
+        <li>
+          Body - The content of the page. Currently accepts basic HTML tags, such as <code>&lt;p&gt; &lt;u&gt; &lt;b&gt;</code>.
+        </li>
+        <li>
+          Link - Where the page is located, e.g.: <code>http://yoursite.com/pages/<u>newpage</u></code>
+        </li>
+        <li>
+          Home page - Set this if the page will be the home page.
+        </li>
+        <li>
+          Enabled - Unset this if the page you are working on is not to be seen by visitors to your site.<br />
+          Note: Admin users can still view pages that are not enabled.
+        </li>
+      </ul>
+      
+      <h3>Blogs</h3>
+      
+      <ul>
+        <li>
+          Title - The title of the blog. Displays in the browser header and at the top of the blog.
+        </li>
+        <li>
+          Description - What the blog is about.
+        </li>
+        <li>
+          Link - Where the blog is located, e.g.: <code>http://yoursite.com/blogs/<u>newblog</u></code>
+        </li>
+        <li>
+          Enabled - Unset this if the blog (and all its posts) you are working on is not to be seen by visitors to your site.<br />
+          Note: Admin users can still view blogs that are not enabled.
+        </li>
+      </ul>
+      
+      <h3>Posts</h3>
+      
+      <ul>
+        <li>
+          Title - The title of the post. Displays in the browser header, in the blog and at the top of the post.
+        </li>
+        <li>
+          Body - The content of the post. Also accepts basic HTML tags.
+        </li>
+        <li>
+          Enabled - Unset this if the post you are working on is not to be seen by visitors to your site.<br />
+          Note: Admin users can still view posts that are not enabled.
+        </li>
+        <li>
+          The link for the post is automatically generated to keep it simple for the user.<br />
+          The format for the link is: YYYY-MM-DD-title-with-dashes<br />
+          The page will be accessible at: <code>http://yoursite.com/blogs/<u>newblog</u>/posts/<u>YYYY-MM-DD-title-with-dashes</u></code>
+        </li>
+      </ul>
+      
+      <h3>Themes</h3>
+      
+      <ul>
+        <li>
+          For information on how to create a custom theme, please visit <a href="http://style.pagesprout.com">the PageSprout Style Guides</a>
+        </li>
+      </ul>
+      
+      <a href="#">Back to Top</a>
+      
+      <div class="footer">
+        Last updated 2008-12-05.
+      </div>
+      
+    </div>
+    
+    
+  </body>
+</html>
