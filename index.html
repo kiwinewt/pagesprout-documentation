@@ -51,10 +51,10 @@
               Rails 2.2.2
             </li>
             <li>
-              The ferret gem - <code>gem install ferret</code>
+              OpenSSL - Depends on your system, e.g.: on Debian Linux: <code>apt-get install libopenssl-ruby1.8</code>
             </li>
             <li>
-              OpenSSL - Dependant on your system. E.G.: on Debian Linux: <code>apt-get install libopenssl-ruby1.8</code>
+              The ferret gem - <code>rake gems:install</code>
             </li>
             <li>
               Depending on your choice of database:
@@ -145,7 +145,8 @@
           </ul>
         </li>
         <li>
-          Uncomment the first line in config/environment.rb: <code># ENV['RAILS_ENV'] ||= 'production'</code>
+          Uncomment the first line in config/environment.rb:
+          <ul><li> <code># ENV['RAILS_ENV'] ||= 'production'</code></li></ul>
         </li>
         <li>
           Create the database by running these from the command line:
@@ -165,6 +166,16 @@
       <a href="#">Back to Top</a>
       
       <h2 id="usage">Using</h2>
+      <h3>Quick Start</h3>
+      <ul>
+        <li>Create a new user. The first user will be the site admin.</li>
+        <li>Create new pages and blogs via the menus.</li>
+        <li>For new themes, please visit: "http://pagesprout.com":http://pagesprout.com</li>
+        <li>For information on how to create a custom theme, please visit: "http://style.pagesprout.com":http://style.pagesprout.com</li>
+        <li>To add a CAPTCHA to your contact page, please:</li>
+        <li>Sign up at "http://recaptcha.net":http://recaptcha.net</li>
+        <li>Add your Public and Private API keys to the config/config.yml file.</li>
+      </ul>
       
       <h3>First Use</h3>
       
